@@ -1,0 +1,14 @@
+{
+  "name": "wheelmaker/laravue-spa",
+  "description": "SPA with Laravel backend and Vue frontend.",
+  "require": {
+    "laravel/framework": "6.*.*",
+    "aws/aws-sdk-php": "~3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Wheelmaker\\LaravueSpa\\": "src/"
+    }
+  },
+  "license": "MIT"
+}
