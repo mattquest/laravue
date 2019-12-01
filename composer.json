@@ -10,5 +10,12 @@
       "Wheelmaker\\LaravueSpa\\": "src/"
     }
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Wheelmaker\\LaravueSpa\\LaravueSpaServiceProvider"
+      ]
+    }
+  },
   "license": "MIT"
 }
