@@ -8,13 +8,20 @@ const routeMix = {
   }
 }
 
-const processComponents = function(componentFiles, defaultComponentFiles = false) {
+const processComponents = function(
+  initData,
+  componentFiles,
+  defaultComponentFiles = false
+) {
   let appRoute = null
   const components = {}
   const [routes, menuItems, drawerMenuItems] = [[], [], []]
+  const loggedIn = initData.user !== null
+  console.log(loggedIn, "logged in")
 
   function setRoutes(component) {
     if (!component.route) return
+    if (loggedIn && component.guest) return
     const route = { ...component.route }
     route.component = component
     if (route.name === "app") {
@@ -24,6 +31,7 @@ const processComponents = function(componentFiles, defaultComponentFiles = false
     }
   }
   function setMenus(component) {
+    if (loggedIn && component.guest) return
     if (component.menuItem) {
       menuItems.push({ route: component.route.path, text: component.route.name })
     }
@@ -32,6 +40,7 @@ const processComponents = function(componentFiles, defaultComponentFiles = false
     }
   }
   function setComponents(comp) {
+    if (loggedIn && comp.guest) return
     components[comp.name] = comp
   }
   function eachComponent(files, funcs) {

@@ -103,6 +103,7 @@
       }
     },
     menuItem: true,
+    guest: true,
     route: {
       name: "register",
       path: "register"

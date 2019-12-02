@@ -67,6 +67,7 @@
       }
     },
     menuItem: true,
+    guest: true,
     route: {
       name: "login",
       path: "login"

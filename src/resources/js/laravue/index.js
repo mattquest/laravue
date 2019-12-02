@@ -13,6 +13,7 @@ const componentFiles = require.context(
 )
 
 const { appRoute, menuItems, drawerMenuItems } = processComponents(
+  initData,
   componentFiles,
   defaultComponentFiles
 )
