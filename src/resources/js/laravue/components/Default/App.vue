@@ -54,7 +54,7 @@
       }
     },
     methods: {
-      ...mapMutations(["fill", "appInterface/toggleDrawer"])
+      ...mapMutations(["fill", "toggleDrawer"])
     }
   }
 </script>

@@ -29,7 +29,7 @@ Append the following code to the resources/js/app.js file:
 
     app.$store.commit("fill", { menu, drawerMenu, ...initData })
 
-`php artisan ui --auth`
+`php artisan ui:auth`
 
 `php artisan migrate`
 

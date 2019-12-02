@@ -40,7 +40,10 @@
     },
     methods: {
       logout() {
-        axios.post("/logout").then(() => location.reload())
+        axios.post("/logout").then(() => {
+          window.location.href = "/#/"
+          window.location.reload()
+        })
       }
     }
   }

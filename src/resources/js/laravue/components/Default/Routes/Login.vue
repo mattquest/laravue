@@ -73,7 +73,10 @@
     },
     methods: {
       login() {
-        this.form.post().then(r => console.log(r))
+        this.form.post().then(r => {
+          window.location.href = "/#/"
+          window.location.reload()
+        })
       }
     }
   }

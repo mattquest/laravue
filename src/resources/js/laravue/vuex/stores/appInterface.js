@@ -1,7 +1,7 @@
 import { assignExisting } from "@wheelmaker/object-helpers"
 
 const appInterface = {
-  namespaced: true,
+  namespaced: false,
   state: {
     currentObject: {},
     currentObjects: [],
