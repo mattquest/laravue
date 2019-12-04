@@ -2,7 +2,7 @@
   <v-app>
     <drawer v-if="user"></drawer>
     <v-app-bar color="primary darken-1" dark fixed app>
-      <v-toolbar-title style="cursor: pointer;" @click="() => routeTo('app')">
+      <v-toolbar-title style="cursor: pointer;" @click="() => routeTo('home')">
         {{ appName }}
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -25,7 +25,7 @@
       </v-container>
     </v-content>
     <app-dialogs />
-    <v-footer color="primary darken-1" app text-xs-center>
+    <v-footer color="primary darken-1" text-xs-center>
       <v-flex text-center class="white--text"
         >&copy; {{ new Date().getFullYear() }}</v-flex
       >

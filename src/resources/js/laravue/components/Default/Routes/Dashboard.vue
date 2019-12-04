@@ -6,7 +6,7 @@
   export default {
     name: "Dashboard",
     route: {
-      name: "dashboard",
+      name: "home",
       path: ""
     }
   }
