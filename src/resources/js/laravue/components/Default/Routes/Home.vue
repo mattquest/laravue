@@ -7,6 +7,7 @@
     name: "Home",
     route: {
       name: "home",
+      guest: true,
       path: ""
     }
   }
