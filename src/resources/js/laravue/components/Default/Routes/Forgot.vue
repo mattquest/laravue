@@ -41,6 +41,7 @@
     },
     guest: true,
     route: {
+      guest: true,
       name: "forgot",
       path: "forgot"
     },
