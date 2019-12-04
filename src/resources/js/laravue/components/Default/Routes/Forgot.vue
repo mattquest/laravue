@@ -39,6 +39,7 @@
         form: new Form("/password/email", { email: "" })
       }
     },
+    guest: true,
     route: {
       name: "forgot",
       path: "forgot"

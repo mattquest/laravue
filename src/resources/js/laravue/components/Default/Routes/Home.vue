@@ -5,6 +5,7 @@
 <script>
   export default {
     name: "Home",
+    guest: true,
     route: {
       name: "home",
       path: ""
