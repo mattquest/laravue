@@ -1,17 +1,15 @@
 <template>
-    <div>dashboard</div>
+  <div>dashboard</div>
 </template>
 
 <script>
-    export default {
-        name: "Dashboard",
-        route: {
-            name: 'dashboard',
-            path: 'dashboard',
-        }
+  export default {
+    name: "Dashboard",
+    route: {
+      name: "dashboard",
+      path: ""
     }
+  }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

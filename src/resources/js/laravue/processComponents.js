@@ -17,18 +17,17 @@ const processComponents = function(
   const components = {}
   const [routes, menuItems, drawerMenuItems] = [[], [], []]
   const loggedIn = initData.user !== null
-  console.log(loggedIn, "logged in")
 
   function setRoutes(component) {
     if (!component.route) return
-    if (loggedIn && component.guest) return
     const route = { ...component.route }
     route.component = component
     if (route.name === "app") {
       appRoute = route
-    } else {
-      routes.push(route)
+      return
     }
+    if (loggedIn != (component.guest !== true)) return
+    routes.push(route)
   }
   function setMenus(component) {
     if (loggedIn && component.guest) return
@@ -66,6 +65,8 @@ const processComponents = function(
   registerNamedComponents(components)
   // all other routes are children of app route
   appRoute.children = routes
+
+  console.log(appRoute)
 
   return { appRoute, menuItems, drawerMenuItems }
 }
