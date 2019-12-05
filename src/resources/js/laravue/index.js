@@ -5,17 +5,13 @@ import store from "./vuex/store"
 import VueRouter from "vue-router"
 Vue.use(VueRouter)
 
-const defaultComponentFiles = require.context("./components/Default", true, /.*\.vue$/i)
-const componentFiles = require.context(
-  "./components",
-  true,
-  /^(?!.*(?:Default)).*\.vue$/i
-)
+const coreComponentFiles = require.context("./coreComponents", true, /.*\.vue$/i)
+const componentFiles = require.context("../components", true, /.*\.vue$/i)
 
 const { appRoute, menuItems, drawerMenuItems } = processComponents(
   initData,
   componentFiles,
-  defaultComponentFiles
+  coreComponentFiles
 )
 
 const routes = [appRoute, { path: "*", redirect: "/" }]

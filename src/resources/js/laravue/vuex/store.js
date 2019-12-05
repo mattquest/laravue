@@ -13,6 +13,7 @@ export default new Vuex.Store({
   },
   actions: {
     routeTo(context, { caller, name }) {
+      console.log("routeTo", name)
       if (caller.$route.name !== name) caller.$router.push({ name })
     }
   },
