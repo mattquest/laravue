@@ -2,7 +2,9 @@ const coreMixins = [
   {
     methods: {
       routeTo(name) {
-        this.$store.dispatch("routeTo", { caller: this, name })
+        if (this.$route.name !== name) {
+          this.$router.push({ name })
+        }
       }
     }
   }
