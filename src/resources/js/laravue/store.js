@@ -3,6 +3,8 @@ import Vuex from "vuex"
 import { assignExisting } from "@wheelmaker/object-helpers"
 Vue.use(Vuex)
 
+// TODO - make store extensible from file one level up
+
 export default new Vuex.Store({
   state: {
     appName: null,
