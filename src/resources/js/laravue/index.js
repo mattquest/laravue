@@ -24,16 +24,6 @@ const router = new VueRouter({ routes })
 const menu = [...menuItems]
 const drawerMenu = [...drawerMenuItems]
 
-if (process.env.ASSET_PATH) {
-  Vue.mixin({
-    methods: {
-      asset(append) {
-        return process.env.ASSET_PATH + append
-      }
-    }
-  })
-}
-
 export { menu, drawerMenu }
 export const VueOptions = {
   el: "#app",
