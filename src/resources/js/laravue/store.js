@@ -1,26 +1,24 @@
+import Vue from "vue"
+import Vuex from "vuex"
 import { assignExisting } from "@wheelmaker/object-helpers"
+Vue.use(Vuex)
 
-const appInterface = {
-  namespaced: false,
+export default new Vuex.Store({
   state: {
-    currentObject: {},
-    currentObjects: [],
-    menu: [],
-    drawerMenu: [],
+    appName: null,
     drawer: false,
+    drawerMenu: [],
+    menu: [],
     snackbar: {
       text: "",
       show: false
-    }
+    },
+    user: null
   },
-  getters: {},
+  actions: {},
   mutations: {
     fill(state, data) {
       assignExisting(state, data)
-    },
-    currentObject(state, { type, item }) {
-      state.currentObject = item
-      state.currentObjects[type] = item
     },
     hideSnackbar(state) {
       state.snackbar.show = false
@@ -30,14 +28,9 @@ const appInterface = {
       state.snackbar.text = text
       state.snackbar.show = true
     },
-    toggleFlag(state, flagName) {
-      state[flagName] = !state[flagName]
-    },
     toggleDrawer(state) {
       state.drawer = !state.drawer
     }
   },
-  actions: {}
-}
-
-export default { name: "appInterface", definition: appInterface }
+  modules: {}
+})

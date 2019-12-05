@@ -1,7 +1,7 @@
 import Vue from "vue"
 import vuetify from "./vuetify"
 import processComponents from "./processComponents"
-import store from "./vuex/store"
+import store from "./store"
 import VueRouter from "vue-router"
 Vue.use(VueRouter)
 

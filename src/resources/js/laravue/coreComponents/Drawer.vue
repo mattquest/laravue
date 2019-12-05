@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" fixed right app>
+  <v-navigation-drawer :value="drawer" fixed right app>
     <v-list dense>
       <v-list-item
         v-for="(item, i) in drawerItems"
@@ -33,10 +33,7 @@
       return {}
     },
     computed: {
-      ...mapState({
-        drawerItems: state => state.appInterface.drawerItems,
-        drawer: state => state.appInterface.drawer
-      })
+      ...mapState(["drawerItems", "drawer"])
     },
     methods: {
       logout() {
