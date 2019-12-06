@@ -1,3 +1,4 @@
 <?php
 
-Route::get('/', 'AppController@index')->middleware(['web']);
+Route::get('/', '\App\Http\Controllers\AppController@index')
+     ->middleware(['web']);
