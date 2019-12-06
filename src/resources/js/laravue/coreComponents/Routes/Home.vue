@@ -26,6 +26,11 @@
         >
           A single page application framework by
           <a href="https://wheelmaker.dev" target="_blank"> wheelmaker</a>.
+          <br />
+          <span style="font-size: 1rem; color: #555">
+            available on:
+            <a href="https://github.com/mattquest/laravue-spa">github</a>
+          </span>
         </v-flex>
       </v-flex>
     </v-container>
