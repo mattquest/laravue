@@ -1,12 +1,7 @@
 <template>
   <v-layout fill-height justify-end row>
     <v-toolbar-items>
-      <v-btn
-        v-for="(menuItem, i) in menu"
-        text
-        :key="i"
-        @click="() => routeToName(menuItem.route)"
-      >
+      <v-btn v-for="(menuItem, i) in menu" :key="i" text @click="routeTo(menuItem.route)">
         {{ menuItem.text }}
       </v-btn>
     </v-toolbar-items>
@@ -19,12 +14,6 @@
     name: "MainMenu",
     computed: {
       ...mapState(["menu"])
-    },
-    methods: {
-      ...mapActions(["routeTo"]),
-      routeToName(name) {
-        this.routeTo({ caller: this, name })
-      }
     }
   }
 </script>
