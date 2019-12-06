@@ -14,6 +14,6 @@ class LaravueSpaServiceProvider extends ServiceProvider {
     ], 'laravue-spa');
     // publish core assets only - for update 
     // php artisan vendor:publish --tag="laravue-spa-core" --force
-    $this->publishes([__DIR__.'/resources/js/laravue' => resource_path('js/')], 'laravue-spa-core');
+    $this->publishes([__DIR__.'/resources/js/laravue' => resource_path('js/laravue')], 'laravue-spa-core');
   }
 }
