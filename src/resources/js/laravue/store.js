@@ -1,12 +1,13 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import store from "../store"
 import { assignExisting } from "@wheelmaker/object-helpers"
-Vue.use(Vuex)
 
-// TODO - make store extensible from file one level up
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    ...store.state,
     appName: null,
     drawer: false,
     drawerMenu: [],
@@ -17,8 +18,11 @@ export default new Vuex.Store({
     },
     user: null
   },
-  actions: {},
+  actions: {
+    ...store.actions
+  },
   mutations: {
+    ...store.mutations,
     fill(state, data) {
       assignExisting(state, data)
     },
@@ -34,5 +38,7 @@ export default new Vuex.Store({
       state.drawer = !state.drawer
     }
   },
-  modules: {}
+  modules: {
+    ...store.modules
+  }
 })
