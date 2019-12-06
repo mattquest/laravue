@@ -7,14 +7,17 @@
         </v-flex>
 
         <v-row align="center" justify="center">
-          <v-col align="center" cols="12" sm="4">
-            <v-img width="100" :src="asset('images/vue.png')"></v-img>
-          </v-col>
-          <v-col align="center" cols="12" sm="4">
-            <v-img width="100" :src="asset('images/laravel.png')"></v-img>
-          </v-col>
-          <v-col align="center" cols="12" sm="4">
-            <v-img width="100" :src="asset('images/vuetify.png')"></v-img>
+          <v-col
+            v-for="(framework, i) in subFrameworks"
+            :key="i"
+            align="center"
+            cols="12"
+            sm="4"
+          >
+            <a :href="framework.url" target="_blank">
+              <v-img width="100" :src="asset('images/' + framework.image)" />
+            </a>
+            <v-flex class="grey--text pt-3">{{ framework.name }}</v-flex>
           </v-col>
         </v-row>
         <v-flex
@@ -33,6 +36,25 @@
   export default {
     name: "Home",
     guest: true,
+    data: () => ({
+      subFrameworks: [
+        {
+          url: "https://laravel.com",
+          name: "Laravel",
+          image: "laravel.png"
+        },
+        {
+          url: "https://vuejs.org/",
+          name: "Vue.js",
+          image: "vue.png"
+        },
+        {
+          url: "https://vuetifyjs.com/",
+          name: "Vuetify",
+          image: "vuetify.png"
+        }
+      ]
+    }),
     route: {
       name: "home",
       path: ""
