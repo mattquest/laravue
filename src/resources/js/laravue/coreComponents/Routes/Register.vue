@@ -26,15 +26,6 @@
               type="text"
             ></v-text-field>
             <v-text-field
-              v-model="form.fields.team"
-              prepend-icon="fa-users"
-              name="team"
-              label="Company"
-              :error-messages="form.errors.team"
-              @keydown="form.resetStatus()"
-              type="text"
-            ></v-text-field>
-            <v-text-field
               v-model="form.fields.password"
               id="password"
               label="Password"
@@ -98,9 +89,7 @@
     data() {
       return {
         form: new Form("/register", {
-          plan: "free", // default plan from App\Providers\SparkServiceProvider
           name: "",
-          team: "",
           email: "",
           password: "",
           password_confirmation: "",
