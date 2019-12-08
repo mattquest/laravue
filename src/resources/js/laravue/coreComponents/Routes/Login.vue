@@ -1,11 +1,11 @@
 <template>
-  <v-layout pt-5 mt-5 justify-middle row>
+  <v-row class="pt-sm-5 mt-sm-5">
     <v-spacer></v-spacer>
     <v-flex>
-      <div class="pa-3 display-1 secondary--text">
+      <div class="pa-3 display-1 text-center secondary--text">
         Login
       </div>
-      <v-card class="elevation-3">
+      <v-card class="elevation-3 mx-auto" max-width="350">
         <v-card-text>
           <v-form>
             <v-text-field
@@ -53,7 +53,7 @@
       </v-card>
     </v-flex>
     <v-spacer></v-spacer>
-  </v-layout>
+  </v-row>
 </template>
 
 <script>
@@ -75,7 +75,8 @@
     methods: {
       login() {
         this.form.post().then(r => {
-          window.location.href = "/#/"
+          // login component doesn't exist for authed user
+          // will redirect to home (dashboard)
           window.location.reload()
         })
       }

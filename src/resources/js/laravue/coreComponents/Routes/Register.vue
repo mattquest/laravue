@@ -1,10 +1,10 @@
 <template>
-  <v-row justify="center">
+  <v-row class="mt-sm-5 pt-sm-5">
     <v-flex>
-      <div class="pa-3 display-1 secondary--text">
+      <div class="pa-3 display-1 secondary--text text-center">
         Register
       </div>
-      <v-card class="elevation-3">
+      <v-card class="elevation-3 mx-auto" max-width="450">
         <v-card-text>
           <v-form>
             <v-text-field

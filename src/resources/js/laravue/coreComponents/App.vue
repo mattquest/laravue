@@ -16,11 +16,9 @@
     <v-content>
       <v-container fluid>
         <v-layout justify-center>
-          <v-spacer></v-spacer>
           <v-flex>
             <router-view></router-view>
           </v-flex>
-          <v-spacer></v-spacer>
         </v-layout>
       </v-container>
     </v-content>

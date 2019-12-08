@@ -1,11 +1,10 @@
 <template>
   <v-content>
-    <v-container class="fill-height" fluid>
+    <v-container class="fill-height">
       <v-flex align="center" justify="center" class="pa-5" style="background: #fff">
         <v-flex class="pa-5 text-center display-2 font-weight-light">
           Laravue SPA
         </v-flex>
-
         <v-row align="center" justify="center">
           <v-col
             v-for="(framework, i) in subFrameworks"
