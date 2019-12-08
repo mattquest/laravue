@@ -28,6 +28,7 @@
         >&copy; {{ new Date().getFullYear() }}</v-flex
       >
     </v-footer>
+    <v-overlay :absolute="true" :opacity="0.3" :value="overlay" :z-index="100000" />
   </v-app>
 </template>
 
@@ -46,7 +47,7 @@
     },
     mounted() {},
     computed: {
-      ...mapState(["user", "appName"]),
+      ...mapState(["user", "appName", "overlay"]),
       routeName() {
         return this.$route.name
       }

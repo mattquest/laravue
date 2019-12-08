@@ -10,6 +10,7 @@ export default new Vuex.Store({
     ...store.state,
     appName: null,
     drawer: false,
+    overlay: false,
     drawerMenu: [],
     menu: [],
     snackbar: {
