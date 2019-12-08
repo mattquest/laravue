@@ -17,7 +17,7 @@ Adding vue components is as simple as placing them in the correct folder and add
 ### Install package with composer and publish assets
 
 - `composer require wheelmaker/laravue-spa`
-- `php composer vendor:publish --tag=laravue-spa`
+- `php artisan vendor:publish --tag=laravue-spa`
 
 ### Append the following code to the resources/js/app.js file:
 
@@ -37,7 +37,7 @@ Adding vue components is as simple as placing them in the correct folder and add
 
 ### Add laravue-spa npm package:
 
-- `yarn add laravue-spa`
+- `yarn add laravue-spa-np`
 
 ### Install npm packages and compile for dev:
 

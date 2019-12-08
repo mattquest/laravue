@@ -25,8 +25,8 @@
               prepend-icon="fa-lock"
               type="password"
               :error-messages="form.errors.password"
+              @keydown.enter.stop="login()"
               @keydown="form.resetStatus()"
-              @keydown.enter="login()"
             ></v-text-field>
             <v-checkbox
               class="justify-start pl-5 ml-2 pb-0 mb-0"
@@ -47,8 +47,14 @@
             </a>
           </v-flex>
           <v-spacer></v-spacer>
-          <v-btn text @click="form.reset()">reset</v-btn>
-          <v-btn color="primary" @click="login()">Login</v-btn>
+          <v-btn text @click="form.reset()" :disabled="form.pending">reset</v-btn>
+          <v-btn
+            color="primary"
+            :disabled="form.pending"
+            :loading="form.pending"
+            @click="login()"
+            >Login</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-flex>

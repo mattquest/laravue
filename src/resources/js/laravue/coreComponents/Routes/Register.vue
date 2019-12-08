@@ -77,8 +77,14 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text @click="form.reset()">reset</v-btn>
-          <v-btn color="primary" @click="register()">Register</v-btn>
+          <v-btn text :disabled="form.pending" @click="form.reset()">reset</v-btn>
+          <v-btn
+            color="primary"
+            :disabled="form.pending"
+            :loading="form.pending"
+            @click="register()"
+            >Register</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-flex>
