@@ -47,12 +47,8 @@
             </a>
           </v-flex>
           <v-spacer></v-spacer>
-          <v-btn text @click="form.reset()" :disabled="form.pending">reset</v-btn>
-          <v-btn
-            color="primary"
-            :disabled="form.pending"
-            :loading="form.pending"
-            @click="login()"
+          <v-btn text @click="form.reset()" :disabled="pending">reset</v-btn>
+          <v-btn color="primary" :disabled="pending" :loading="pending" @click="login()"
             >Login</v-btn
           >
         </v-card-actions>
@@ -69,6 +65,7 @@
     name: "Login",
     data() {
       return {
+        pending: false,
         form: new Form("/login", { email: "", password: "", remember: false })
       }
     },
@@ -80,11 +77,17 @@
     },
     methods: {
       login() {
-        this.form.post().then(r => {
-          // login component doesn't exist for authed user
-          // will redirect to home (dashboard)
-          window.location.reload()
-        })
+        this.pending = true
+        this.form
+          .post()
+          .then(r => {
+            // login component doesn't exist for authed user
+            // will redirect to home (dashboard)
+            window.location.reload()
+          })
+          .catch(r => {
+            this.pending = false
+          })
       }
     }
   }
