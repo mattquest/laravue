@@ -1,56 +1,17 @@
 # Laravue Spa
 
-### A Single Page Application Framework
+A single page application framework built on Laravel 6, Vue.js and Vuetify.
 
-##### Built On: Laravel / Vue.js / Vuetify
+### Pre Release - Experimental!
 
-### Pre Alpha Release - Experimental - Docs Not Complete!!
+### [Live Demo Site](https://laravue-spa.wheelmaker.dev)
 
-### Demo @ https://laravue-spa.wheelmaker.dev
+### See [wiki](https://github.com/mattquest/laravue-spa/wiki) for documentation!
 
-Laravue Spa scaffolds out a single page application, making it easy to hit the ground running with great technologies and the beautiful Vuetify ui library.
+Laravue Spa is a single page application scaffolding that pulls together Laravel, Vue.js and Vuetify.  Under the hood, it's all Laravel 6 on the backend with it's built in user authentication features.  The front end is pulled together with vuex, vue-router and the beautiful Vuetify.js component library.
 
-Adding vue components is as simple as placing them in the correct folder and adding corresponding route, menu item and drawer menu item definitions when appropriate.
-
-## Starting From Fresh Laravel 6 Project
-
-### Install package with composer and publish assets
-
-- `composer require wheelmaker/laravue-spa`
-- `php artisan vendor:publish --tag=laravue-spa`
-
-### Append the following code to the resources/js/app.js file:
-
-    import Vue from "vue"
-    import { VueOptions, menu, drawerMenu } from "./laravue"
-
-    var app = new Vue({
-      ...VueOptions
-    })
-
-    app.$store.commit("fill", { menu, drawerMenu, ...initData })
-
-### Use Laravel's built in authorization scaffolding:
-
-- `php artisan ui:auth`
-- `php artisan migrate`
-
-### Add laravue-spa npm package:
-
-- `yarn add laravue-spa-np`
-
-### Install npm packages and compile for dev:
-
-- `yarn`
-- `yarn run dev`
-
-### Comment or delete the default route in /routes/web.php:
-
-> :warning: note: this is your laravel project's root level `/routes/web.php` file
-
-    // Route::get('/', function () {
-    //     return view('welcome');
-    // });
-
-Woo hoo! You should now have a Laravue Spa instance up and running, similar to
-https://laravue-spa.wheelmaker.dev
+Laravue Spa is designed to be flexible, lightweight and extensible.  
+* any core component can be overwritten 
+* the main vuex store is easily extended
+* routes and menu items are defined as properties of Vue components
+* "global scoped" mixins allow the placement of mixins on all project components without contaminating imported library components
