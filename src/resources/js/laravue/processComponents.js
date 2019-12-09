@@ -34,30 +34,28 @@ const processComponents = function(
       if (comp.drawerMenuItem) {
         drawerMenuItems.push(comp.route.name)
       }
-    },
-    // set component
-    comp => {
-      if (loggedIn && comp.guest) return
-      components[comp.name] = comp
     }
   ]
 
-  function eachComponent(files, funcs) {
+  function defineComponents(files) {
     if (!files) return
     files.keys().map(key => {
-      funcs.forEach(func => func(files(key).default))
+      const comp = files(key).default
+      if (loggedIn && comp.guest) return
+      components[comp.name] = comp
     })
   }
 
   // defaults are overwritten by customs
-  eachComponent(defaultComponentFiles, funcs)
-  eachComponent(componentFiles, funcs)
+  defineComponents(defaultComponentFiles)
+  defineComponents(componentFiles)
 
   // register named components
   Object.values(components).map(component => {
     if (component.name === undefined) return
     component.mixins = [...coreMixins, ...mixins]
     Vue.component(component.name, component)
+    funcs.forEach(func => func(component))
   })
 
   // all other routes are children of app route
