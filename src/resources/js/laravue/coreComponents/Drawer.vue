@@ -13,7 +13,7 @@
           <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item @click="logout()">
+      <v-list-item :disabled="loggingOut" @click="logout()">
         <v-list-item-action>
           <v-icon>logout</v-icon>
         </v-list-item-action>
@@ -30,17 +30,25 @@
   export default {
     name: "Drawer",
     data() {
-      return {}
+      return {
+        loggingOut: false
+      }
     },
     computed: {
       ...mapState(["drawerItems", "drawer"])
     },
     methods: {
       logout() {
-        axios.post("/logout").then(() => {
-          window.location.href = "/#/"
-          window.location.reload()
-        })
+        this.loggingOut = true
+        axios
+          .post("/logout")
+          .then(() => {
+            window.location.href = "/#/"
+            window.location.reload()
+          })
+          .catch(r => {
+            this.loggingOut = false
+          })
       }
     }
   }

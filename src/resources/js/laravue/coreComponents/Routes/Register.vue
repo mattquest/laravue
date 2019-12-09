@@ -68,11 +68,11 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text :disabled="form.pending" @click="form.reset()">reset</v-btn>
+          <v-btn text :disabled="pending" @click="form.reset()">reset</v-btn>
           <v-btn
             color="primary"
-            :disabled="form.pending"
-            :loading="form.pending"
+            :disabled="pending"
+            :loading="pending"
             @click="register()"
             >Register</v-btn
           >
@@ -88,6 +88,7 @@
     name: "Register",
     data() {
       return {
+        pending: false,
         form: new Form("/register", {
           name: "",
           email: "",
@@ -105,9 +106,15 @@
     },
     methods: {
       register() {
-        this.form.post().then(() => {
-          location.reload()
-        })
+        this.pending = true
+        this.form
+          .post()
+          .then(() => {
+            location.reload()
+          })
+          .catch(r => {
+            this.pending = false
+          })
       }
     }
   }
