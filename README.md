@@ -8,7 +8,7 @@ A single page application framework built on Laravel 6, Vue.js and Vuetify.
 
 ### See [wiki](https://github.com/mattquest/laravue-spa/wiki) for documentation!
 
-Laravue Spa is a single page application scaffolding that pulls together Laravel, Vue.js and Vuetify.  Under the hood, it's all Laravel 6 on the backend with it's built in user authentication features.  The front end is pulled together with vuex, vue-router and the beautiful Vuetify.js component library.
+Laravue Spa pulls together Laravel, Vue.js and Vuetify.  Under the hood, it's all Laravel 6 on the backend with it's built in user authentication features.  The front end is built with vuex, vue-router and the beautiful Vuetify.js component library.
 
 Laravue Spa is designed to be flexible, lightweight and extensible.  
 * any core component can be overwritten 
