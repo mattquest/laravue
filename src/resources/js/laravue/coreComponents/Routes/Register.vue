@@ -83,19 +83,23 @@
 </template>
 
 <script>
-  import Form from "lara-js-form"
+  import Form from "@wheelmaker/js-form"
   export default {
     name: "Register",
     data() {
       return {
         pending: false,
-        form: new Form("/register", {
-          name: "",
-          email: "",
-          password: "",
-          password_confirmation: "",
-          terms: false
-        })
+        form: new Form(
+          "/register",
+          {
+            name: "",
+            email: "",
+            password: "",
+            password_confirmation: "",
+            terms: false
+          },
+          r => r.response.data.errors
+        )
       }
     },
     menuItem: true,

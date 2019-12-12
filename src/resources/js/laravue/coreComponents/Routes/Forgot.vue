@@ -30,13 +30,13 @@
 </template>
 
 <script>
-  import Form from "lara-js-form"
+  import Form from "@wheelmaker/js-form"
 
   export default {
     name: "Login",
     data() {
       return {
-        form: new Form("/password/email", { email: "" })
+        form: new Form("/password/email", { email: "" }, r => r.response.data.errors)
       }
     },
     guest: true,
